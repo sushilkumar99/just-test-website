@@ -1,0 +1,443 @@
+:root {
+    --text-color: #383838;
+    --sky-blue: #0DACFF;
+    --bg-light: #f4f6f8;
+    --font-roboto: 'Poppins', sans-serif;;
+    --body-fontSize: 16px;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit
+}
+
+body {
+    font-size: var(--body-fontSize);
+    color: var(--text-color);
+    font-weight: 400;
+    font-family: var(--font-roboto);
+    line-height: 1.7;
+}
+
+.section_main_heading {
+    font-size: clamp(1.75rem, 0.5962rem + 3.2051vw, 3rem);
+    /* (28px - 48px) */
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+button {
+    font-size: var(--body-fontSize);
+    font-family: var(--font-roboto);
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 6px 12px;
+    transition: all .15s linear;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn {
+    border-radius: 4px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.cs-container {
+    width: min(100% - 24px, 1170px);
+    margin-inline: auto
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+section {
+    padding-block: 60px;
+}
+
+.card {
+    padding: 1.25rem;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    height: 100%;
+    min-height: 285px;
+}
+
+.card.active {
+    background-color: var(--sky-blue);
+    color: #fff;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--sky-blue);
+}
+
+.card.active .card-title {
+    color: #fff;
+}
+
+.card.active .btn {
+    color: #fff;
+}
+
+.card .icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.card-desc {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.card .btn {
+    color: var(--sky-blue);
+    padding: 8px 16px;
+}
+
+.card:hover .btn,
+.card .btn:hover {
+    background-color: rgba(13, 170, 255, 0.1);
+}
+
+.card.active:hover .btn,
+.card.active .btn:hover {
+    color: var(--sky-blue);
+    background-color: white;
+}
+
+.small,
+small {
+    font-size: 13.5px;
+}
+
+.cs-row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.cs-row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
+}
+
+.cs-col-4 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.row-gap-4 {
+    row-gap: 24px;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+@media(min-width: 768px) {
+    .cs-col-4 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+@media(min-width: 992px) {
+    .cs-col-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+}
+
+@media(min-width: 1200px) {}
+
+@media(min-width: 1400px) {
+    .container {
+        width: min(100% - 24px, 1320px)
+    }
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+    left: 2%;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+    right: 2%;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background-color: var(--sky-blue) !important;
+}
+
+.shadow-none {
+    box-shadow: none !important;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.thank_you_wrapper {
+    max-width: 720px;
+    margin-inline: 12px;
+    background-color: var(--bg-light);
+    padding: 48px;
+    border-radius: 10px;
+}
+
+@media(min-width:721px) {
+    .thank_you_wrapper {
+        margin-inline: auto;
+    }
+}
+
+/* ------------- css new and experimental property ------------ */
+
+/* 1.animation-timeline: ; scroll(), view() */
+/* 3.animation-range-start: ; */
+/* 4.animation-range-end: ; */
+/* 5.animation-range: ; exit, entry, cover, contain, normal*/
+
+.scroll_watcher {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8px;
+    width: 100%;
+    background-color: var(--sky-blue);
+    z-index: 10000;
+    scale: 0 1;
+    transform-origin: left;
+
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+    to {
+        scale: 1 1;
+    }
+}
+
+
+body:has(.banner_top){
+    overflow-x: hidden;
+}
+.banner_top {
+    position: relative;
+    height: 420px;
+}
+
+.banner_img {
+    object-fit: cover;
+    opacity: .8;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: var(--ratio);
+    transform-origin: bottom;
+    animation: banner_img_animation linear forwards;
+    animation-timeline: view();
+    animation-range: exit ;
+}
+@keyframes banner_img_animation {
+    25% {
+        opacity: 1;
+    }
+    80%,100%{
+        opacity: 0;
+        scale: 2;
+    }
+}
+
+.banner_top .overlay {
+    position: absolute;
+    width: 100%;
+    aspect-ratio: var(--ratio);
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform-origin: bottom;
+    backdrop-filter: blur(2px);
+    animation: banner_img_animation linear forwards;
+    animation-timeline: view();
+    animation-range: exit ;
+}
+
+.banner_top .content {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    animation: fade-out linear forwards;
+    animation-timeline: view();
+    animation-range: exit;
+}
+
+@keyframes fade-out {
+
+    to {
+        opacity: 0;
+    }
+}
+
+.banner_top .content .section_main_heading {
+    font-size: clamp(2.5rem, 0.5962rem + 3.2051vw, 5rem);
+    line-height: 1.2;
+}
+
+.banner_top .content .btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+    color: #fff;
+    transition: all .15s ease-in-out;
+}
+
+.banner_top .content .btn:hover {
+    background-color: #fff;
+    color: var(--text-color);
+}
+
+@media(min-width:576px) {
+    .banner_top {
+        --ratio: 16/8;
+        height: auto;
+    }
+
+    .banner_top .content {
+        width: 70%;
+    }
+}
+
+@media(min-width:1200px) {
+    .banner_top .content {
+        width: 50%;
+    }
+}
+
+.srollEfect {
+    overflow: hidden;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    mask: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+
+
+}
+
+.srollEfect>span {
+    flex-shrink: 0;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 5px 15px;
+    animation: sroll 3s linear forwards infinite;
+    /* animation-timeline: scroll(root); */
+}
+
+@keyframes sroll {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+.scroll_revel{
+    background-color: #222;
+}
+.scroll_revel span{
+    color: rgba(255, 255, 255, 0.2);
+    background-clip: text;
+    background-image: linear-gradient(90deg, #fff, #fff);
+    text-align: center;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+
+    animation: scroll_revel linear forwards;
+    animation-timeline: view();
+}
+.scroll_revel .section_main_heading span{
+    animation-range-start: cover 20vh ;
+    animation-range-end: cover 30vh;
+}
+.scroll_revel .para span{
+    animation-range-start: cover 11vh ;
+    animation-range-end: cover 50vh;
+}
+
+@keyframes scroll_revel {
+    to {
+        background-size: 100% 100%;
+    }
+}
+
+@media(prefers-reduced-motion: no-preference) {
+    .animation.fade-in {
+        scale: .6;
+        opacity: 0;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range: entry;
+        /* animation-range-start: 100px;
+        animation-range-end: 50%; */
+    }
+
+    @keyframes fade-in {
+        to {
+            scale: 1;
+            opacity: 1;
+        }
+    }
+}
